@@ -13,6 +13,9 @@ const ClientLogin1 = () => {
         navigation.navigate('CreateAccount');
     }
 
+    function handleNavigateToSignIn() {
+        navigation.navigate('SignIn');
+    }
     return (
         <LinearGradient 
             colors={['#DE2B2B', '#FF922E']}
@@ -32,7 +35,7 @@ const ClientLogin1 = () => {
             </View>
 
             <View style={styles.footer}>
-                <RectButton style={styles.button} onPress={handleNavigateToCreateAccount}>
+                <RectButton style={styles.button} onPress={handleNavigateToSignIn}>
                     <Text style={styles.buttonText}>Entrar</Text>
                 </RectButton>
                 <RectButton style={styles.button} onPress={handleNavigateToCreateAccount}>

@@ -10,7 +10,7 @@ const ChoosePersona = () => {
     const navigation = useNavigation();
     const [persona, setPersona] = React.useState<string>('');
 
-    function handleNavigateToChoosePersona(persona: string) {
+    function handleNavigateToChoosePassword(persona: string) {
         setPersona(persona)
         navigation.navigate('ChoosePassword');
     }
@@ -25,7 +25,7 @@ const ChoosePersona = () => {
             </View>
 
             <View style={styles.content}> 
-                <RectButton style={styles.button} onPress={() => handleNavigateToChoosePersona('apreciador')}>
+                <RectButton style={styles.button} onPress={() => handleNavigateToChoosePassword('apreciador')}>
                     <View>
                         <Text style={styles.textCenter}> 
                             <AntDesign name="star" size={48} color="#FFBE41" />
@@ -35,7 +35,7 @@ const ChoosePersona = () => {
                         </Text>
                     </View>
                 </RectButton>
-                <RectButton style={styles.button} onPress={() =>handleNavigateToChoosePersona('festeiro')}>
+                <RectButton style={styles.button} onPress={() =>handleNavigateToChoosePassword('festeiro')}>
                     <View>
                         <Text style={styles.textCenter}> 
                             <MaterialIcons name="attach-money" size={48} color="#41A51E" />

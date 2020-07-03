@@ -6,13 +6,14 @@ import { Feather as Icon, Ionicons  } from '@expo/vector-icons';
 import {useNavigation} from '@react-navigation/native'
 
 
-const ChoosePassword = () => {
+const BarCreateAccount = () => {
     const navigation = useNavigation();
-    const [password, onChangePassword] = React.useState('');
-    const [passwordConfimation, onChangePasswordConfirmation] = React.useState('');
+    const [name, onChangeName] = React.useState('');
+    const [email, onChangeEmail] = React.useState('');
+    const [cnpj, onChangeCnpj] = React.useState('');
     
-    function handleNavigateToSignIn() {
-        navigation.navigate('SignIn');
+    function handleNavigateToChooseBarPassword() {
+        navigation.navigate('BarCreatePassword');
     }
 
     return (
@@ -21,26 +22,32 @@ const ChoosePassword = () => {
             style={styles.container}
             >
             <View style={styles.header}> 
-                <Text style={styles.title}>Só mais um passo</Text>
+                <Text style={styles.title}>Olá!</Text>
             </View>
 
             <View style={styles.inputForm}> 
-                <Text style={styles.inputLabel}>Escolha uma senha</Text>
+                <Text style={styles.inputLabel}>Qual o nome do estabelecimento?</Text>
                 <TextInput
                 style={styles.textInput}
-                onChangeText={text => onChangePassword(text)}
-                value={password}
+                onChangeText={text => onChangeName(text)}
+                value={name}
                 />
-                <Text style={styles.inputLabel}>Confirme sua senha</Text>
+                <Text style={styles.inputLabel}>Qual o seu email?</Text>
                 <TextInput
                 style={styles.textInput}
-                onChangeText={text => onChangePasswordConfirmation(text)}
-                value={passwordConfimation}
+                onChangeText={text => onChangeEmail(text)}
+                value={email}
+                />
+                <Text style={styles.inputLabel}>Digite seu CNPJ</Text>
+                <TextInput
+                style={styles.textInput}
+                onChangeText={text => onChangeCnpj(text)}
+                value={cnpj}
                 />
             </View>
 
             <View style={styles.footer}>
-                <RectButton style={styles.button} onPress={handleNavigateToSignIn}>
+                <RectButton style={styles.button} onPress={handleNavigateToChooseBarPassword}>
                     <Text style={styles.buttonText}>Próximo</Text>
                 </RectButton>
             </View>
@@ -60,7 +67,7 @@ const styles = StyleSheet.create({
         width: '90%',
         backgroundColor: 'white',
         marginTop: 10,
-        marginBottom: 10,
+        marginBottom: 10
     },
 
     inputForm: {
@@ -82,8 +89,8 @@ const styles = StyleSheet.create({
         color: '#fff',
         fontSize: 32,
         fontFamily: 'Lato_700Bold',
-        maxWidth: 200,
-        textAlign: 'left',
+        maxWidth: 260,
+        textAlign: 'center',
     },
 
     inputLabel: {
@@ -124,4 +131,4 @@ const styles = StyleSheet.create({
 
   });
 
-export default ChoosePassword;
+export default BarCreateAccount;

@@ -6,13 +6,13 @@ import { Feather as Icon, Ionicons  } from '@expo/vector-icons';
 import {useNavigation} from '@react-navigation/native'
 
 
-const ChoosePassword = () => {
+const SignIn = () => {
     const navigation = useNavigation();
+    const [email, onChangeEmail] = React.useState('');
     const [password, onChangePassword] = React.useState('');
-    const [passwordConfimation, onChangePasswordConfirmation] = React.useState('');
     
-    function handleNavigateToSignIn() {
-        navigation.navigate('SignIn');
+    function handleNavigateToFeed() {
+        navigation.navigate('Feed');
     }
 
     return (
@@ -21,26 +21,26 @@ const ChoosePassword = () => {
             style={styles.container}
             >
             <View style={styles.header}> 
-                <Text style={styles.title}>Só mais um passo</Text>
+                <Text style={styles.title}>digite seus dados</Text>
             </View>
 
             <View style={styles.inputForm}> 
-                <Text style={styles.inputLabel}>Escolha uma senha</Text>
+                <Text style={styles.inputLabel}>Digite seu email</Text>
+                <TextInput
+                style={styles.textInput}
+                onChangeText={text => onChangeEmail(text)}
+                value={email}
+                />
+                <Text style={styles.inputLabel}>Digite sua senha</Text>
                 <TextInput
                 style={styles.textInput}
                 onChangeText={text => onChangePassword(text)}
                 value={password}
                 />
-                <Text style={styles.inputLabel}>Confirme sua senha</Text>
-                <TextInput
-                style={styles.textInput}
-                onChangeText={text => onChangePasswordConfirmation(text)}
-                value={passwordConfimation}
-                />
             </View>
 
             <View style={styles.footer}>
-                <RectButton style={styles.button} onPress={handleNavigateToSignIn}>
+                <RectButton style={styles.button} onPress={handleNavigateToFeed}>
                     <Text style={styles.buttonText}>Próximo</Text>
                 </RectButton>
             </View>
@@ -124,4 +124,4 @@ const styles = StyleSheet.create({
 
   });
 
-export default ChoosePassword;
+export default SignIn;

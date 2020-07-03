@@ -6,7 +6,7 @@ import { Feather as Icon, Ionicons  } from '@expo/vector-icons';
 import {useNavigation} from '@react-navigation/native'
 
 
-const ChoosePassword = () => {
+const BarCreatePassword = () => {
     const navigation = useNavigation();
     const [password, onChangePassword] = React.useState('');
     const [passwordConfimation, onChangePasswordConfirmation] = React.useState('');
@@ -124,4 +124,4 @@ const styles = StyleSheet.create({
 
   });
 
-export default ChoosePassword;
+export default BarCreatePassword;
