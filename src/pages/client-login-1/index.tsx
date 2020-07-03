@@ -2,18 +2,15 @@ import React from 'react';
 import {StyleSheet, ImageBackground, Text, View, Image, } from 'react-native';
 import {RectButton} from 'react-native-gesture-handler';
 import {LinearGradient} from 'expo-linear-gradient';
+import { Feather as Icon, Ionicons  } from '@expo/vector-icons';
 import {useNavigation} from '@react-navigation/native'
 
 
-const Login2 = () => {
+const ClientLogin1 = () => {
     const navigation = useNavigation();
-
-    function handleNavigateToClientLogin() {
-        navigation.navigate('ClientLogin1');
-    }
-
-    function handleNavigateToSupplierLogin() {
-        navigation.navigate('');
+    
+    function handleNavigateToCreateAccount() {
+        navigation.navigate('CreateAccount');
     }
 
     return (
@@ -28,16 +25,18 @@ const Login2 = () => {
             </View>
 
             <View style={styles.container}> 
-                <Text style={styles.description}>Bem vindo ao ambev club!</Text>
-                <Text style={styles.description}>O que você deseja?</Text>
+                <Text style={styles.textCenter}> 
+                    <Ionicons name="md-beer" size={32} color="white" />
+                </Text>
+                <Text style={styles.description}>que tal uma gelada?</Text>
             </View>
 
             <View style={styles.footer}>
-                <RectButton style={styles.button} onPress={handleNavigateToClientLogin}>
-                    <Text style={styles.buttonText}>Quero Beber!</Text>
+                <RectButton style={styles.button} onPress={handleNavigateToCreateAccount}>
+                    <Text style={styles.buttonText}>Entrar</Text>
                 </RectButton>
-                <RectButton style={styles.button} onPress={handleNavigateToSupplierLogin}>
-                    <Text style={styles.buttonText}>Quero vender!</Text>
+                <RectButton style={styles.button} onPress={handleNavigateToCreateAccount}>
+                    <Text style={styles.buttonTextGreen}>Criar uma conta</Text>
                 </RectButton>
             </View>
         </LinearGradient>
@@ -50,7 +49,10 @@ const styles = StyleSheet.create({
       padding: 32,
     },
 
-  
+    textCenter: {
+        textAlign: 'center',
+    },
+
     title: {
       color: '#fff',
       fontSize: 64,
@@ -134,7 +136,16 @@ const styles = StyleSheet.create({
       color: '#DE2B2B',
       fontFamily: 'Lato_700Bold',
       fontSize: 20,
+    },
+
+    buttonTextGreen: {
+        flex: 1,
+        justifyContent: 'center',
+        textAlign: 'center',
+        color: '#08AA05',
+        fontFamily: 'Lato_700Bold',
+        fontSize: 20,
     }
   });
 
-export default Login2;
+export default ClientLogin1;
