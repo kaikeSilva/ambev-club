@@ -8,7 +8,8 @@ import {useNavigation} from '@react-navigation/native'
 
 const CreateAccount = () => {
     const navigation = useNavigation();
-    const [value, onChangeText] = React.useState('Useless Placeholder');
+    const [name, onChangeName] = React.useState('');
+    const [email, onChangeEmail] = React.useState('');
     
     function handleNavigateToCreatePersona() {
         navigation.navigate('Points');
@@ -27,14 +28,14 @@ const CreateAccount = () => {
                 <Text style={styles.inputLabel}>Qual o seu nome?</Text>
                 <TextInput
                 style={styles.textInput}
-                onChangeText={text => onChangeText(text)}
-                value={value}
+                onChangeText={text => onChangeName(text)}
+                value={name}
                 />
                 <Text style={styles.inputLabel}>Qual o seu email?</Text>
                 <TextInput
                 style={styles.textInput}
-                onChangeText={text => onChangeText(text)}
-                value={value}
+                onChangeText={text => onChangeEmail(text)}
+                value={email}
                 />
             </View>
 
