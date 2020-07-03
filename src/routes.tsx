@@ -9,6 +9,8 @@ import Login1 from './pages/login-1';
 import Login2 from './pages/login-2';
 import ClientLogin1 from './pages/client-login-1';
 import CreateAccount from './pages/create-account';
+import ChoosePersona from './pages/choose-persona';
+import ChoosePassword from './pages/choose-password';
 
 const AppStack = createStackNavigator();
 const Routes = () => {
@@ -26,6 +28,8 @@ const Routes = () => {
                 <AppStack.Screen name="Login2" component={Login2}/>
                 <AppStack.Screen name="ClientLogin1" component={ClientLogin1}/>
                 <AppStack.Screen name="CreateAccount" component={CreateAccount}/>
+                <AppStack.Screen name="ChoosePersona" component={ChoosePersona}/>    
+                <AppStack.Screen name="ChoosePassword" component={ChoosePassword}/>
             </AppStack.Navigator>
         </NavigationContainer>
     )
