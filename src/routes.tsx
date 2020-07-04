@@ -18,30 +18,32 @@ import SignIn from './pages/sign-in';
 
 const AppStack = createStackNavigator();
 const Routes = () => {
-    return (
-        <NavigationContainer>
-            <AppStack.Navigator 
-            headerMode="none"
-            screenOptions={{
-                cardStyle: {
-                    backgroundColor: '#f0f0f5'
-                }
-            }}
-            >
-                <AppStack.Screen name="Login1" component={Login1}/>
-                <AppStack.Screen name="Login2" component={Login2}/>
-                <AppStack.Screen name="ClientLogin1" component={ClientLogin1}/>
-                <AppStack.Screen name="CreateAccount" component={CreateAccount}/>
-                <AppStack.Screen name="ChoosePersona" component={ChoosePersona}/>    
-                <AppStack.Screen name="ChoosePassword" component={ChoosePassword}/>
-                <AppStack.Screen name="BarLogin" component={BarLogin}/>
-                <AppStack.Screen name="BarCreateAccount" component={BarCreateAccount}/>
-                <AppStack.Screen name="BarCreatePassword" component={BarCreatePassword}/>
-                <AppStack.Screen name="SignIn" component={SignIn}/>
-                
-            </AppStack.Navigator>
-        </NavigationContainer>
-    )
-}
+  return (
+    <NavigationContainer>
+      <AppStack.Navigator
+        headerMode="none"
+        screenOptions={{
+          cardStyle: {
+            backgroundColor: '#f0f0f5',
+          },
+        }}
+      >
+        <AppStack.Screen name="Login1" component={Login1} />
+        <AppStack.Screen name="Login2" component={Login2} />
+        <AppStack.Screen name="ClientLogin1" component={ClientLogin1} />
+        <AppStack.Screen name="CreateAccount" component={CreateAccount} />
+        <AppStack.Screen name="ChoosePersona" component={ChoosePersona} />
+        <AppStack.Screen name="ChoosePassword" component={ChoosePassword} />
+        <AppStack.Screen name="BarLogin" component={BarLogin} />
+        <AppStack.Screen name="BarCreateAccount" component={BarCreateAccount} />
+        <AppStack.Screen
+          name="BarCreatePassword"
+          component={BarCreatePassword}
+        />
+        <AppStack.Screen name="SignIn" component={SignIn} />
+      </AppStack.Navigator>
+    </NavigationContainer>
+  );
+};
 
-export default Routes
+export default Routes;
