@@ -13,12 +13,12 @@ import BarLogin from './pages/AuthScreens/BarLogin';
 import BarCreateAccount from './pages/AuthScreens/BarCreateAccount';
 import BarCreatePassword from './pages/AuthScreens/BarCreatePassword';
 import SignIn from './pages/AuthScreens/SignIn';
-import Feed from './pages/ClientNavigation/Events/feed';
-import BottomNavigation from './components/bottom-navigation';
-import BeerCollection from './pages/ClientNavigation/beer-collection';
+import Events from './pages/ClientNavigation/Events';
+import BottomNavigation from './components/BottomNavigation';
+import BeerCollection from './pages/ClientNavigation/BeerCollection';
 
 const AppStack = createStackNavigator();
-const Routes = () => {
+const Routes = (): JSX.Element => {
   return (
     <NavigationContainer>
       <AppStack.Navigator
@@ -37,12 +37,12 @@ const Routes = () => {
         <AppStack.Screen name="ChoosePassword" component={CreatePassword} />
         <AppStack.Screen name="BarLogin" component={BarLogin} />
         <AppStack.Screen name="BarCreateAccount" component={BarCreateAccount} />
-        <AppStack.Screen 
+        <AppStack.Screen
           name="BarCreatePassword"
           component={BarCreatePassword}
         />
         <AppStack.Screen name="SignIn" component={SignIn} />
-        <AppStack.Screen name="Feed" component={Feed} />
+        <AppStack.Screen name="Events" component={Events} />
         <AppStack.Screen name="Bars" component={Bars} />
         <AppStack.Screen name="BottomNavigation" component={BottomNavigation} />
         <AppStack.Screen name="BeerCollection" component={BeerCollection} />

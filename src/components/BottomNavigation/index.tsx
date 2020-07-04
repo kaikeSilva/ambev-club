@@ -28,11 +28,19 @@ const BottomNavigation = () => {
     navigation.navigate('Bars');
   }
 
+  function handleNavigateToEvents() {
+    navigation.navigate('Events');
+  }
+
+  function handleNavigateToBeerCollection() {
+    navigation.navigate('BeerCollection');
+  }
+
   return (
     <View style={styles.bottomNavigation}>
       <RectButton
         style={styles.navigationBottonItem}
-        onPress={handleNavigateToBars}
+        onPress={handleNavigateToEvents}
       >
         <Icon
           style={styles.bottomNavigationTextSelected}
@@ -53,7 +61,7 @@ const BottomNavigation = () => {
 
       <RectButton
         style={styles.navigationBottonItem}
-        onPress={handleNavigateToBars}
+        onPress={handleNavigateToBeerCollection}
       >
         <FontAwesome5 name="beer" size={32} color="white" />
         <Text style={styles.bottomNavigationText}>Cervejas</Text>

@@ -19,7 +19,7 @@ import {
   ScrollView,
 } from 'react-native';
 
-const Feed = () => {
+const Events = () => {
   const navigation = useNavigation();
   const [filter, setFilter] = React.useState('');
   const [password, onChangePassword] = React.useState('');
@@ -245,4 +245,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Feed;
+export default Events;
