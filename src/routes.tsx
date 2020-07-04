@@ -3,7 +3,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
 import Home from './pages/Home';
-import Points from './pages/Points';
+import Bars from './pages/bars';
 import Detail from './pages/Detail';
 import Login1 from './pages/login-1';
 import Login2 from './pages/login-2';
@@ -15,6 +15,8 @@ import BarLogin from './pages/bar-login';
 import BarCreateAccount from './pages/bar-create-account';
 import BarCreatePassword from './pages/bar-create-password';
 import SignIn from './pages/sign-in';
+import Feed from './pages/feed/feed';
+import BottomNavigation from './pages/components/bottom-navigation';
 
 const AppStack = createStackNavigator();
 const Routes = () => {
@@ -41,6 +43,9 @@ const Routes = () => {
           component={BarCreatePassword}
         />
         <AppStack.Screen name="SignIn" component={SignIn} />
+        <AppStack.Screen name="Feed" component={Feed} />
+        <AppStack.Screen name="Bars" component={Bars} />
+        <AppStack.Screen name="BottomNavigation" component={BottomNavigation} />
       </AppStack.Navigator>
     </NavigationContainer>
   );
