@@ -34,7 +34,12 @@
     ],
     "no-use-before-define": "off",
     "no-param-reassign": "off",
-    "import/no-extraneous-dependencies": ["error", { "devDependencies": true }]
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        "devDependencies": true
+      }
+    ]
   },
   "settings": {
     "import/resolver": {

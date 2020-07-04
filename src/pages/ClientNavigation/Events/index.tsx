@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 import { RectButton } from 'react-native-gesture-handler';
 import { LinearGradient } from 'expo-linear-gradient';
 import {
@@ -19,8 +20,12 @@ import {
   ScrollView,
 } from 'react-native';
 
+import { setNavigation } from '../../../store/navigationSlice';
+
 const Events = () => {
   const navigation = useNavigation();
+  const dispatch = useDispatch();
+
   const [filter, setFilter] = React.useState('');
   const [password, onChangePassword] = React.useState('');
 
@@ -28,12 +33,12 @@ const Events = () => {
     navigation.navigate('Bars');
   }
 
+  useEffect(() => {
+    dispatch(setNavigation({ group: 1, page: 'events' }));
+  });
+
   return (
     <View style={styles.container}>
-      <View style={styles.header}>
-        <Icon name="menu" size={24} color="white" />
-        <Icon name="search" size={24} color="white" />
-      </View>
       <View style={styles.filter}>
         <Text style={styles.regularText}>Classificar por:</Text>
         <Picker
@@ -118,7 +123,7 @@ const Events = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    paddingTop: 32,
+    paddingTop: 10,
     backgroundColor: 'white',
     alignItems: 'center',
   },
