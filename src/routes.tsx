@@ -13,7 +13,7 @@ import BarLogin from './pages/AuthScreens/BarLogin';
 import BarCreateAccount from './pages/AuthScreens/BarCreateAccount';
 import BarCreatePassword from './pages/AuthScreens/BarCreatePassword';
 import SignIn from './pages/AuthScreens/SignIn';
-import Feed from './pages/ClientNavigation/Events/feed';
+import Events from './pages/ClientNavigation/Events';
 import BottomNavigation from './components/BottomNavigation';
 import BeerCollection from './pages/ClientNavigation/BeerCollection';
 
@@ -42,7 +42,7 @@ const Routes = (): JSX.Element => {
           component={BarCreatePassword}
         />
         <AppStack.Screen name="SignIn" component={SignIn} />
-        <AppStack.Screen name="Feed" component={Feed} />
+        <AppStack.Screen name="Events" component={Events} />
         <AppStack.Screen name="Bars" component={Bars} />
         <AppStack.Screen name="BottomNavigation" component={BottomNavigation} />
         <AppStack.Screen name="BeerCollection" component={BeerCollection} />

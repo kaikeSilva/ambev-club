@@ -22,11 +22,7 @@ export default function App(): JSX.Element {
 
   return (
     <>
-      <StatusBar
-        barStyle="dark-content"
-        backgroundColor="transparent"
-        translucent
-      />
+      <StatusBar barStyle="light-content" backgroundColor="#DE2B2B" />
       <Routes />
     </>
   );

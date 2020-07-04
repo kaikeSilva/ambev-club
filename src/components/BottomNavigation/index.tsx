@@ -28,8 +28,8 @@ const BottomNavigation = () => {
     navigation.navigate('Bars');
   }
 
-  function handleNavigateToFeed() {
-    navigation.navigate('Feed');
+  function handleNavigateToEvents() {
+    navigation.navigate('Events');
   }
 
   function handleNavigateToBeerCollection() {
@@ -40,7 +40,7 @@ const BottomNavigation = () => {
     <View style={styles.bottomNavigation}>
       <RectButton
         style={styles.navigationBottonItem}
-        onPress={handleNavigateToFeed}
+        onPress={handleNavigateToEvents}
       >
         <Icon
           style={styles.bottomNavigationTextSelected}

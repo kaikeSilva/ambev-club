@@ -18,7 +18,7 @@ const BeerCollection = () => {
       <TopNavigation />
       <View style={styles.container}>
         <View style={styles.beerCard}>
-          <Image source={require('../../assets/colorado-eugenia.png')} />
+          <Image source={require('../../../assets/colorado-eugenia.png')} />
           <View style={styles.beerTextCard}>
             <Text>Eugênia</Text>
             <Text>Session IPA</Text>
