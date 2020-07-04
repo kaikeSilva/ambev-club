@@ -30,7 +30,7 @@ const BeerCollection = () => {
             <View style={styles.container}>
                 <View style={styles.beerCard}>
                     <Image 
-                    source={require('../../assets/colorado-eugenia.png')} 
+                    source={require('../../../assets/colorado-eugenia.png')} 
                     />
                     <View style={styles.beerTextCard}>
                         <Text>Eugênia</Text>

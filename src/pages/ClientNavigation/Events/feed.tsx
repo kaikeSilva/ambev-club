@@ -52,7 +52,7 @@ const Feed = () => {
           <View style={styles.feedCard}>
             <Image
               style={styles.image}
-              source={require('../../assets/party-beer.jpg')}
+              source={require('../../../assets/party-beer.jpg')}
             />
             <Text style={styles.feedCardRegularText}>Bar do Seu Jõao</Text>
             <Text style={styles.feedCardBoldText}>Cervejada 3 por 2</Text>
@@ -62,7 +62,7 @@ const Feed = () => {
           <View style={styles.feedCard}>
             <Image
               style={styles.image}
-              source={require('../../assets/rock-bar.jpg')}
+              source={require('../../../assets/rock-bar.jpg')}
             />
             <Text style={styles.feedCardRegularText}>Bar Thunderstruck</Text>
             <Text style={styles.feedCardBoldText}>Noite do Rock, open bar</Text>
@@ -72,7 +72,7 @@ const Feed = () => {
           <View style={styles.feedCard}>
             <Image
               style={styles.image}
-              source={require('../../assets/party-beer.jpg')}
+              source={require('../../../assets/party-beer.jpg')}
             />
             <Text style={styles.feedCardRegularText}>Bar do Seu Jõao</Text>
             <Text style={styles.feedCardBoldText}>Cervejada 3 por 2</Text>
