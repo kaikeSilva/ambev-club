@@ -14,11 +14,11 @@ import BarCreateAccount from './pages/AuthScreens/BarCreateAccount';
 import BarCreatePassword from './pages/AuthScreens/BarCreatePassword';
 import SignIn from './pages/AuthScreens/SignIn';
 import Feed from './pages/ClientNavigation/Events/feed';
-import BottomNavigation from './components/bottom-navigation';
-import BeerCollection from './pages/ClientNavigation/beer-collection';
+import BottomNavigation from './components/BottomNavigation';
+import BeerCollection from './pages/ClientNavigation/BeerCollection';
 
 const AppStack = createStackNavigator();
-const Routes = () => {
+const Routes = (): JSX.Element => {
   return (
     <NavigationContainer>
       <AppStack.Navigator
@@ -37,7 +37,7 @@ const Routes = () => {
         <AppStack.Screen name="ChoosePassword" component={CreatePassword} />
         <AppStack.Screen name="BarLogin" component={BarLogin} />
         <AppStack.Screen name="BarCreateAccount" component={BarCreateAccount} />
-        <AppStack.Screen 
+        <AppStack.Screen
           name="BarCreatePassword"
           component={BarCreatePassword}
         />

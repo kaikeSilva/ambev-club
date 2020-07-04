@@ -12,12 +12,12 @@ import {
 import { useNavigation } from '@react-navigation/native';
 import MapView, { Marker } from 'react-native-maps';
 import { SvgUri } from 'react-native-svg';
-import BottomNavigation from '../../../components/bottom-navigation/index';
-import TopNavigation from '../../../components/top-navigation';
+import BottomNavigation from '../../../components/BottomNavigation';
+import TopNavigation from '../../../components/TopNavigation';
 
 const Points = () => {
   const navigation = useNavigation();
-  const [showBar, setShowBar] = React.useState<Boolean>(false);
+  const [showBar, setShowBar] = React.useState<boolean>(false);
 
   function handleNavigationBack() {
     navigation.goBack();
