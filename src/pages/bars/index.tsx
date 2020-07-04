@@ -17,7 +17,6 @@ const Points = () => {
         navigation.goBack();
     }
 
-
     function showBarDetails() {
         return (
           <View style={styles.mapMarkerContainer}>
@@ -52,9 +51,9 @@ const Points = () => {
                         longitude: -49.4616
                     }}>
                         <View>
-                          {showBar ? showBarDetails : null}
+                          <View>{showBar ? showBarDetails() : <FontAwesome5 name="map-marker-alt" size={24} color="black" />}</View>
                         </View>
-                        <FontAwesome5 name="map-marker-alt" size={24} color="black" />
+                        
                     </Marker>
                 </MapView>
             </View>

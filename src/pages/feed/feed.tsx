@@ -12,6 +12,7 @@ import {
     Image,
     Picker,
     ScrollView } from 'react-native';
+import BottomNavigation from '../components/bottom-navigation';
 
 const Feed = () => {
     const navigation = useNavigation();
@@ -23,85 +24,63 @@ const Feed = () => {
     }
 
     return (
-
-        <View style={styles.container}> 
-            <View style={styles.header}> 
-                <Icon name="menu" size={24} color="white" />   
-                <Icon name="search" size={24} color="white" />         
-            </View>
-            <View style={styles.filter}>
-                <Text style={styles.regularText}>Classificar por:</Text>
-                <Picker
-                selectedValue={filter}
-                onValueChange={hand => setFilter(hand)}
-                style={{ width: 200 }}
-                mode="dropdown">
-                    <Picker.Item label="bares que eu sigo" value="bares que eu sigo"/>
-                    <Picker.Item label="bares próximos" value="bares próximos"/>
-                </Picker>
-            </View>
-
-            <ScrollView style={styles.scrollView}>
-                <View style={styles.scrollViewContainer}>
-                    <View style={styles.feedCard}>
-                        <Image 
-                        style={styles.image}
-                        source={require('../../assets/party-beer.jpg')}
-                        />
-                        <Text style={styles.feedCardRegularText}>Bar do Seu Jõao</Text>
-                        <Text style={styles.feedCardBoldText}>Cervejada 3 por 2</Text>
-                        <Text style={styles.feedCardRegularText}>Hoje às 21h</Text>
-                    </View>
-
-                    <View style={styles.feedCard}>
-                        <Image 
-                        style={styles.image}
-                        source={require('../../assets/rock-bar.jpg')}
-                        />
-                        <Text style={styles.feedCardRegularText}>Bar Thunderstruck</Text>
-                        <Text style={styles.feedCardBoldText}>Noite do Rock, open bar</Text>
-                        <Text style={styles.feedCardRegularText}>Amanhã às 23h</Text>
-                    </View>
-
-                    <View style={styles.feedCard}>
-                        <Image 
-                        style={styles.image}
-                        source={require('../../assets/party-beer.jpg')}
-                        />
-                        <Text style={styles.feedCardRegularText}>Bar do Seu Jõao</Text>
-                        <Text style={styles.feedCardBoldText}>Cervejada 3 por 2</Text>
-                        <Text style={styles.feedCardRegularText}>Hoje às 21h</Text>
-                    </View>
+        <>
+            <View style={styles.container}> 
+                <View style={styles.header}> 
+                    <Icon name="menu" size={24} color="white" />   
+                    <Icon name="search" size={24} color="white" />         
+                </View>
+                <View style={styles.filter}>
+                    <Text style={styles.regularText}>Classificar por:</Text>
+                    <Picker
+                    selectedValue={filter}
+                    onValueChange={hand => setFilter(hand)}
+                    style={{ width: 200 }}
+                    mode="dropdown">
+                        <Picker.Item label="bares que eu sigo" value="bares que eu sigo"/>
+                        <Picker.Item label="bares próximos" value="bares próximos"/>
+                    </Picker>
                 </View>
 
+                <ScrollView style={styles.scrollView}>
+                    <View style={styles.scrollViewContainer}>
+                        <View style={styles.feedCard}>
+                            <Image 
+                            style={styles.image}
+                            source={require('../../assets/party-beer.jpg')}
+                            />
+                            <Text style={styles.feedCardRegularText}>Bar do Seu Jõao</Text>
+                            <Text style={styles.feedCardBoldText}>Cervejada 3 por 2</Text>
+                            <Text style={styles.feedCardRegularText}>Hoje às 21h</Text>
+                        </View>
 
-            </ScrollView>
-            
-            <View style={styles.bottomNavigation}>
-                <RectButton  
-                style={styles.navigationBottonItem}
-                onPress={handleNavigateToBars} >
-                    <Icon style={styles.bottomNavigationTextSelected} name="calendar" size={32} color="white"/>
-                    <Text style={styles.bottomNavigationTextSelected}>Eventos</Text>
-                </RectButton>
+                        <View style={styles.feedCard}>
+                            <Image 
+                            style={styles.image}
+                            source={require('../../assets/rock-bar.jpg')}
+                            />
+                            <Text style={styles.feedCardRegularText}>Bar Thunderstruck</Text>
+                            <Text style={styles.feedCardBoldText}>Noite do Rock, open bar</Text>
+                            <Text style={styles.feedCardRegularText}>Amanhã às 23h</Text>
+                        </View>
 
-                <RectButton  
-                style={styles.navigationBottonItem}
-                onPress={handleNavigateToBars} >
-                    <MaterialIcons name="local-bar" size={32} color="white" />
-                    <Text style={styles.bottomNavigationText}>Bares</Text>
-                </RectButton>
+                        <View style={styles.feedCard}>
+                            <Image 
+                            style={styles.image}
+                            source={require('../../assets/party-beer.jpg')}
+                            />
+                            <Text style={styles.feedCardRegularText}>Bar do Seu Jõao</Text>
+                            <Text style={styles.feedCardBoldText}>Cervejada 3 por 2</Text>
+                            <Text style={styles.feedCardRegularText}>Hoje às 21h</Text>
+                        </View>
+                    </View>
 
-                <RectButton  
-                style={styles.navigationBottonItem}
-                onPress={handleNavigateToBars} >
-                    <FontAwesome5 name="beer" size={32} color="white" />
-                    <Text style={styles.bottomNavigationText}>Cervejas</Text>
-                </RectButton>
 
+                </ScrollView>
+                
             </View>
-        </View>
-
+            <BottomNavigation/>
+        </>
     )
 }
 

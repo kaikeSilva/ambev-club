@@ -17,6 +17,7 @@ import BarCreatePassword from './pages/bar-create-password';
 import SignIn from './pages/sign-in';
 import Feed from './pages/feed/feed';
 import BottomNavigation from './pages/components/bottom-navigation';
+import BeerCollection from './pages/beer-collection';
 
 const AppStack = createStackNavigator();
 const Routes = () => {
@@ -38,7 +39,7 @@ const Routes = () => {
         <AppStack.Screen name="ChoosePassword" component={ChoosePassword} />
         <AppStack.Screen name="BarLogin" component={BarLogin} />
         <AppStack.Screen name="BarCreateAccount" component={BarCreateAccount} />
-        <AppStack.Screen
+        <AppStack.Screen 
           name="BarCreatePassword"
           component={BarCreatePassword}
         />
@@ -46,6 +47,7 @@ const Routes = () => {
         <AppStack.Screen name="Feed" component={Feed} />
         <AppStack.Screen name="Bars" component={Bars} />
         <AppStack.Screen name="BottomNavigation" component={BottomNavigation} />
+        <AppStack.Screen name="BeerCollection" component={BeerCollection} />
       </AppStack.Navigator>
     </NavigationContainer>
   );
