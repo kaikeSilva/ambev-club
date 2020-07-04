@@ -6,7 +6,7 @@ import { useNavigation } from '@react-navigation/native';
 import MapView, { Marker } from 'react-native-maps';
 import {SvgUri} from 'react-native-svg';
 import BottomNavigation from '../components/bottom-navigation/index'
-import TopNavigation from '../components/top-navigation';
+import TopNavigation from '../../components/top-navigation';
 
 const Points = () => {
     const navigation = useNavigation();

@@ -12,8 +12,8 @@ import {
     Image,
     Picker,
     ScrollView } from 'react-native';
-import TopNavigation from '../components/top-navigation';
-import BottomNavigation from '../components/bottom-navigation';
+import TopNavigation from '../../../components/top-navigation';
+import BottomNavigation from '../../components/bottom-navigation';
 
 const BeerCollection = () => {
     const navigation = useNavigation();
