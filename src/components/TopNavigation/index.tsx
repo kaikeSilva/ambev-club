@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 
 import { RectButton } from 'react-native-gesture-handler';
 import { MaterialIcons as Icon } from '@expo/vector-icons';
-import { useNavigation } from '@react-navigation/native';
+import { useNavigation, DrawerActions } from '@react-navigation/native';
 import { StyleSheet, View } from 'react-native';
 
 import { TGlobalState } from '../../types';
@@ -12,6 +12,10 @@ const TopNavigation = (): JSX.Element | null => {
   const page = useSelector((state: TGlobalState) => state.navigation.page);
 
   const navigation = useNavigation();
+
+  function handleOpenDrawer() {
+    navigation.dispatch(DrawerActions.openDrawer());
+  }
 
   const styles = StyleSheet.create({
     wrapper: {
@@ -29,7 +33,7 @@ const TopNavigation = (): JSX.Element | null => {
     case 'events':
       return (
         <View style={styles.wrapper}>
-          <RectButton onPress={() => console.log('Menu')}>
+          <RectButton onPress={handleOpenDrawer}>
             <Icon name="menu" size={24} style={styles.icon} />
           </RectButton>
           <RectButton onPress={() => console.log('Search')}>
