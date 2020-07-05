@@ -18,6 +18,8 @@ import SignIn from '../pages/AuthScreens/SignIn';
 import Events from '../pages/ClientNavigation/Events';
 import BottomNavigation from '../components/BottomNavigation';
 import BeerCollection from '../pages/ClientNavigation/BeerCollection';
+import BeerDetails from '../pages/ClientNavigation/BeerDetails';
+
 
 const Routes = (): JSX.Element => {
   const AppStack = createStackNavigator();
@@ -58,6 +60,7 @@ const Routes = (): JSX.Element => {
       <AppStack.Screen name="Bars" component={Bars} />
       <AppStack.Screen name="BottomNavigation" component={BottomNavigation} />
       <AppStack.Screen name="BeerCollection" component={BeerCollection} />
+      <AppStack.Screen name="BeerDetails" component={BeerDetails} />
     </AppStack.Navigator>
   );
 };

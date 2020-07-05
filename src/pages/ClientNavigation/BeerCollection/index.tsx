@@ -8,6 +8,8 @@ import {
   Image,
   TextInput,
   ScrollView,
+  TouchableOpacity,
+  ImageSourcePropType,
 } from 'react-native';
 import TopNavigation from '../../../components/TopNavigation';
 import BottomNavigation from '../../../components/BottomNavigation';
@@ -21,7 +23,7 @@ import {
 interface Beer {
   id: number;
   name: string;
-  image: string;
+  image: ImageSourcePropType;
   type: string;
   status: number;
 }
@@ -108,10 +110,10 @@ const BeerCollection = () => {
         <View style={styles.container}>
           {beers.map(beer => (
             <View key={beer.id}>
-<<<<<<< HEAD
               <TouchableOpacity 
                 style={{ backgroundColor: 'transparent' }}
                 onPress={handleNavigateToBeerDetails}>
+
                 {alphabetDivision(beer.name)}
                 <View style={styles.beerCard}>
                   <Image source={beer.image}/>
@@ -120,21 +122,6 @@ const BeerCollection = () => {
                     <Text style={styles.beerTypeText}>{beer.type}</Text>
                     {beer.status ? null : <Text style={styles.beerStatusText}>Voce ainda não consumiu essa cerveja</Text>}
                   </View>
-=======
-              {alphabetDivision(beer.name)}
-              <View style={styles.beerCard}>
-                <Image
-                  source={require('../../../assets/colorado-eugenia.png')}
-                />
-                <View style={styles.beerTextCard}>
-                  <Text style={styles.beerNameText}>{beer.name}</Text>
-                  <Text style={styles.beerTypeText}>{beer.type}</Text>
-                  {beer.status ? null : (
-                    <Text style={styles.beerStatusText}>
-                      Voce ainda não consumiu essa cerveja
-                    </Text>
-                  )}
->>>>>>> edecb6d482ff5c2b45382c72a76065d80443438f
                 </View>
               </TouchableOpacity>
             </View>
