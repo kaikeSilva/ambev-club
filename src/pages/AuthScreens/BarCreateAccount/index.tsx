@@ -11,6 +11,8 @@ import { RectButton } from 'react-native-gesture-handler';
 import { LinearGradient } from 'expo-linear-gradient';
 import { Feather as Icon, Ionicons } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
+
 
 const BarCreateAccount = () => {
   const navigation = useNavigation();

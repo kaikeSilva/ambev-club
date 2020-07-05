@@ -31,12 +31,14 @@ const BarCreateAccount = () => {
       <View style={styles.inputForm}>
         <Text style={styles.inputLabel}>Qual o nome do estabelecimento?</Text>
         <TextInput
+          secureTextEntry={true}
           style={styles.textInput}
           onChangeText={text => onChangeName(text)}
           value={name}
         />
         <Text style={styles.inputLabel}>Qual o seu email?</Text>
         <TextInput
+          secureTextEntry={true}
           style={styles.textInput}
           onChangeText={text => onChangeEmail(text)}
           value={email}

@@ -121,13 +121,6 @@ const Profile = () => {
                 </View>
                 <Text style={styles.smallSubtitleRegular}>Brahma Extra Lager</Text>
               </View>
-
-              <View style={styles.favoriteBeerCard}>
-                <View>
-                    <Image  source={require('../../../assets/wals-impetus.png')}/>
-                </View>
-                <Text style={styles.smallSubtitleRegular}> Wäls Inhotim Impetus </Text>
-              </View>
           </View>
       </ScrollView>
     </View>

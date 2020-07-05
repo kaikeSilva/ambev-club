@@ -32,12 +32,14 @@ const ChoosePassword = () => {
       <View style={styles.inputForm}>
         <Text style={styles.inputLabel}>Escolha uma senha</Text>
         <TextInput
+          secureTextEntry={true}
           style={styles.textInput}
           onChangeText={text => onChangePassword(text)}
           value={password}
         />
         <Text style={styles.inputLabel}>Confirme sua senha</Text>
         <TextInput
+          secureTextEntry={true}
           style={styles.textInput}
           onChangeText={text => onChangePasswordConfirmation(text)}
           value={passwordConfimation}

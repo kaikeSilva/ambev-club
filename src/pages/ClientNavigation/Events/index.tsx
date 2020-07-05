@@ -141,6 +141,8 @@ const styles = StyleSheet.create({
   },
 
   feedCard: {
+    borderRadius: 10,
+    backgroundColor: '#fff',
     marginTop: 20,
     width: '95%',
     flexDirection: 'column',

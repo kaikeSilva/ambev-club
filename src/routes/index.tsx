@@ -22,6 +22,7 @@ import BeerCollection from '../pages/ClientNavigation/BeerCollection';
 import BeerDetails from '../pages/ClientNavigation/BeerDetails';
 import { NavigationContainer, DrawerActions } from '@react-navigation/native';
 import Profile from '../pages/ClientNavigation/profile';
+import breweryEnvironment from '../pages/ClientNavigation/breweryEnvironment';
 
 
 
@@ -48,6 +49,7 @@ const Routes = (): JSX.Element => {
          drawerContent={props => <CustomDrawerContent {...props} />}>
           <AppDrawerNavigator.Screen name="Stack" component={Stack}/>
           <AppDrawerNavigator.Screen name="Profile" component={Profile}/>
+          <AppDrawerNavigator.Screen name="breweryEnvironment" component={breweryEnvironment}/>
       </AppDrawerNavigator.Navigator>
   );
 }

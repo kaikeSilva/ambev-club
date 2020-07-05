@@ -36,6 +36,7 @@ const SignIn = () => {
         />
         <Text style={styles.inputLabel}>Digite sua senha</Text>
         <TextInput
+          secureTextEntry={true}
           style={styles.textInput}
           onChangeText={text => onChangePassword(text)}
           value={password}
