@@ -18,6 +18,7 @@ import {
   Picker,
   ScrollView,
 } from 'react-native';
+import BottomNavigation from '../../../components/BottomNavigation';
 
 const Events = () => {
   const navigation = useNavigation();
@@ -29,6 +30,7 @@ const Events = () => {
   }
 
   return (
+    <>
     <View style={styles.container}>
       <View style={styles.header}>
         <Icon name="menu" size={24} color="white" />
@@ -80,38 +82,9 @@ const Events = () => {
           </View>
         </View>
       </ScrollView>
-
-      <View style={styles.bottomNavigation}>
-        <RectButton
-          style={styles.navigationBottonItem}
-          onPress={handleNavigateToBars}
-        >
-          <Icon
-            style={styles.bottomNavigationTextSelected}
-            name="calendar"
-            size={32}
-            color="white"
-          />
-          <Text style={styles.bottomNavigationTextSelected}>Eventos</Text>
-        </RectButton>
-
-        <RectButton
-          style={styles.navigationBottonItem}
-          onPress={handleNavigateToBars}
-        >
-          <MaterialIcons name="local-bar" size={32} color="white" />
-          <Text style={styles.bottomNavigationText}>Bares</Text>
-        </RectButton>
-
-        <RectButton
-          style={styles.navigationBottonItem}
-          onPress={handleNavigateToBars}
-        >
-          <FontAwesome5 name="beer" size={32} color="white" />
-          <Text style={styles.bottomNavigationText}>Cervejas</Text>
-        </RectButton>
-      </View>
     </View>
+    <BottomNavigation/>
+    </>
   );
 };
 

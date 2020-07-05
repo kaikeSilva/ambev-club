@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigation } from '@react-navigation/native';
-import { StyleSheet, Text, View, Image, TextInput, ScrollView } from 'react-native';
+import { StyleSheet, Text, View, Image, TextInput, ScrollView, TouchableOpacity } from 'react-native';
 import TopNavigation from '../../../components/TopNavigation';
 import BottomNavigation from '../../../components/BottomNavigation';
 import { Feather as Icon, Ionicons,MaterialIcons, FontAwesome5 } from '@expo/vector-icons';
@@ -21,35 +21,23 @@ const BeerCollection = () => {
   let first = true;
 
   let beers: Beer[] = [
-    { id: 0,
-      name: 'Antartica',
-      image: '../../../assets/colorado-eugenia.png',
+    { id: 4,
+      name: 'Eugênia',
+      image: require('../../../assets/colorado-eugenia.png'),
       type: 'Session IPA',
       status: 1
-    },
-    { id: 0,
-      name: 'Amarela',
-      image: '../../../assets/colorado-eugenia.png',
-      type: 'Session IPA',
-      status: 0
     },
     { id: 1,
-      name: 'Eugênia',
-      image: '../../../assets/colorado-eugenia.png',
-      type: 'Session IPA',
-      status: 1
-    },
-    { id: 2,
-      name: 'Estella',
-      image: '../../../assets/colorado-eugenia.png',
-      type: 'Session IPA',
+      name: 'HopCorn IPA',
+      image: require('../../../assets/wals-hopcornipa.png'),
+      type: 'English India Pale Ale',
       status: 0
     },
-    { id: 3,
-      name: 'Bohemia',
-      image: '../../../assets/colorado-eugenia.png',
-      type: 'Session IPA',
-      status: 1
+    { id: 2,
+      name: 'Goose Island IPA',
+      image: require('../../../assets/goose-ipa.png'),
+      type: 'English India Pale Ale',
+      status: 0
     },
   ] 
 
@@ -63,6 +51,10 @@ const BeerCollection = () => {
 
   function handleNavigateToBars() {
     navigation.navigate('Bars');
+  }
+
+  function handleNavigateToBeerDetails() {
+    navigation.navigate('BeerDetails')
   }
 
   function alphabetDivision(name: string) {
@@ -92,15 +84,19 @@ const BeerCollection = () => {
         <View style={styles.container}>
           {beers.map(beer => (
             <View key={beer.id}>
-              {alphabetDivision(beer.name)}
-              <View style={styles.beerCard}>
-                <Image source={require('../../../assets/colorado-eugenia.png')} />
-                <View style={styles.beerTextCard}>
-                  <Text style={styles.beerNameText}>{beer.name}</Text>
-                  <Text style={styles.beerTypeText}>{beer.type}</Text>
-                  {beer.status ? null : <Text style={styles.beerStatusText}>Voce ainda não consumiu essa cerveja</Text>}
+              <TouchableOpacity 
+                style={{ backgroundColor: 'transparent' }}
+                onPress={handleNavigateToBeerDetails}>
+                {alphabetDivision(beer.name)}
+                <View style={styles.beerCard}>
+                  <Image source={beer.image}/>
+                  <View style={styles.beerTextCard}>
+                    <Text style={styles.beerNameText}>{beer.name}</Text>
+                    <Text style={styles.beerTypeText}>{beer.type}</Text>
+                    {beer.status ? null : <Text style={styles.beerStatusText}>Voce ainda não consumiu essa cerveja</Text>}
+                  </View>
                 </View>
-              </View>
+              </TouchableOpacity>
             </View>
           ))}
         </View>
