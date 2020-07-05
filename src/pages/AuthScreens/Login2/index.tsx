@@ -17,23 +17,17 @@ const Login2 = () => {
 
   return (
     <LinearGradient colors={['#DE2B2B', '#FF922E']} style={styles.container}>
-      <View style={styles.container}>
-        <Text style={styles.subTitleTop}>cervejaria</Text>
-        <Text style={styles.title}>ambev</Text>
-        <Text style={styles.subTitle}>club</Text>
-      </View>
-
-      <View style={styles.container}>
-        <Text style={styles.description}>Bem vindo ao ambev club!</Text>
-        <Text style={styles.description}>O que você deseja?</Text>
+      <View style={{alignItems: 'center' }}>
+        <Image source={require('../../../assets/Logo.png')}></Image>
       </View>
 
       <View style={styles.footer}>
+      <Text style={styles.description}>Entrar Como</Text>
         <RectButton style={styles.button} onPress={handleNavigateToClientLogin}>
-          <Text style={styles.buttonText}>Quero Beber!</Text>
+          <Text style={styles.buttonText}>Usuário</Text>
         </RectButton>
         <RectButton style={styles.button} onPress={handleNavigateToBarLogin}>
-          <Text style={styles.buttonText}>Quero vender!</Text>
+          <Text style={styles.buttonText}>Empresa</Text>
         </RectButton>
       </View>
     </LinearGradient>

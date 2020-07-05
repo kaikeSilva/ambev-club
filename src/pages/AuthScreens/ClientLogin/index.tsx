@@ -17,10 +17,8 @@ const ClientLogin1 = () => {
   }
   return (
     <LinearGradient colors={['#DE2B2B', '#FF922E']} style={styles.container}>
-      <View style={styles.container}>
-        <Text style={styles.subTitleTop}>cervejaria</Text>
-        <Text style={styles.title}>ambev</Text>
-        <Text style={styles.subTitle}>club</Text>
+      <View style={{alignItems: 'center' }}>
+        <Image source={require('../../../assets/Logo.png')}></Image>
       </View>
 
       <View style={styles.container}>

@@ -28,7 +28,7 @@ const Events = () => {
   const dispatch = useDispatch();
 
   const [filter, setFilter] = React.useState('');
-  const [password, onChangePassword] = React.useState('');
+  const [page, setPage] = React.useState('events');
 
   function handleNavigateToBars() {
     navigation.navigate('Bars');
@@ -88,7 +88,7 @@ const Events = () => {
         </View>
       </ScrollView>
     </View>
-    <BottomNavigation/>
+    <BottomNavigation page={page}/>
     </>
   );
 };

@@ -1,6 +1,7 @@
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 import { useSelector } from 'react-redux';
+import { createDrawerNavigator, DrawerContentScrollView, DrawerItemList, DrawerItem } from '@react-navigation/drawer';
 
 import { TGlobalState } from '../types';
 import TopNavigation from '../components/TopNavigation';
@@ -19,16 +20,47 @@ import Events from '../pages/ClientNavigation/Events';
 import BottomNavigation from '../components/BottomNavigation';
 import BeerCollection from '../pages/ClientNavigation/BeerCollection';
 import BeerDetails from '../pages/ClientNavigation/BeerDetails';
+import { NavigationContainer, DrawerActions } from '@react-navigation/native';
+
+
+function CustomDrawerContent(props) {
+  return (
+    <DrawerContentScrollView {...props}>
+      <DrawerItemList {...props} />
+      <DrawerItem
+        label="Close drawer"
+        onPress={() => props.navigation.closeDrawer()}
+      />
+      <DrawerItem
+        label="Toggle drawer"
+        onPress={() => props.navigation.toggleDrawer()}
+      />
+    </DrawerContentScrollView>
+  );
+}
 
 
 const Routes = (): JSX.Element => {
-  const AppStack = createStackNavigator();
+  const AppDrawerNavigator = createDrawerNavigator();
+  return (
+      <AppDrawerNavigator.Navigator  
+      drawerContent={props => <CustomDrawerContent {...props} />}>
+          <AppDrawerNavigator.Screen name="Stack" component={Stack} />
+          <AppDrawerNavigator.Screen name="BeerCollection" component={BeerCollection} />
+      </AppDrawerNavigator.Navigator>
+  );
+}
 
+
+
+const Stack = (): JSX.Element => {
+  const AppStack = createStackNavigator();
   const group: number = useSelector(
     (state: TGlobalState) => state.navigation.group,
   );
 
   return (
+    <>
     <AppStack.Navigator
       headerMode={group === 0 ? 'none' : 'screen'}
       screenOptions={{
@@ -62,6 +94,7 @@ const Routes = (): JSX.Element => {
       <AppStack.Screen name="BeerCollection" component={BeerCollection} />
       <AppStack.Screen name="BeerDetails" component={BeerDetails} />
     </AppStack.Navigator>
+    </>
   );
 };
 
