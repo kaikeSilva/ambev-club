@@ -42,8 +42,9 @@ const ChoosePersona = () => {
               <AntDesign name="star" size={48} color="#FFBE41" />
             </Text>
             <Text style={styles.buttonText}>
-              Gosto de cervejas gourmet, sabores diferenciados e novas
-              experiências.
+                Quero explorar o universo cervejeiro,
+                conhecer diferentes cervejas e ter novas
+                experiências!
             </Text>
           </View>
         </RectButton>
@@ -56,8 +57,9 @@ const ChoosePersona = () => {
               <MaterialIcons name="attach-money" size={48} color="#41A51E" />
             </Text>
             <Text style={styles.buttonText}>
-              Não ligo muito para cervejas mais caras e quero ver as melhores
-              ofertas.
+                Quero descobrir as
+                melhores promoções e 
+                os melhores eventos para curtir!
             </Text>
           </View>
         </RectButton>

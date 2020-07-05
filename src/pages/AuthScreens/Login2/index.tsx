@@ -86,8 +86,9 @@ const styles = StyleSheet.create({
   },
 
   footer: {
+    flex: 1,
     alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: 'flex-end',
   },
 
   buttonDrink: {
