@@ -91,7 +91,6 @@ const BeerCollection = () => {
 
   return (
     <>
-      <TopNavigation />
       <View style={styles.searchInputContainer}>
         <Icon
           style={styles.iconStyle}

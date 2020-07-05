@@ -40,7 +40,6 @@ const Points = () => {
 
   return (
     <>
-      <TopNavigation />
       <View style={styles.container}>
         <View style={styles.mapContainer}>
           <MapView

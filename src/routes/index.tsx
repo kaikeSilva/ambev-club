@@ -21,6 +21,7 @@ import BottomNavigation from '../components/BottomNavigation';
 import BeerCollection from '../pages/ClientNavigation/BeerCollection';
 import BeerDetails from '../pages/ClientNavigation/BeerDetails';
 import { NavigationContainer, DrawerActions } from '@react-navigation/native';
+import Profile from '../pages/ClientNavigation/profile';
 
 
 function CustomDrawerContent(props) {
@@ -44,9 +45,9 @@ const Routes = (): JSX.Element => {
   const AppDrawerNavigator = createDrawerNavigator();
   return (
       <AppDrawerNavigator.Navigator  
-      drawerContent={props => <CustomDrawerContent {...props} />}>
-          <AppDrawerNavigator.Screen name="Stack" component={Stack} />
-          <AppDrawerNavigator.Screen name="BeerCollection" component={BeerCollection} />
+         drawerContent={props => <CustomDrawerContent {...props} />}>
+          <AppDrawerNavigator.Screen name="Stack" component={Stack}/>
+          <AppDrawerNavigator.Screen name="Profile" component={Profile}/>
       </AppDrawerNavigator.Navigator>
   );
 }

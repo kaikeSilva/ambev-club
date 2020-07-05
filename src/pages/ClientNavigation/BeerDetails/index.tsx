@@ -52,7 +52,6 @@ const BeerDetails = () => {
 
   return (
     <>
-    <TopNavigation/>
     <ScrollView>
         <View style={styles.headerContainer}>
             <Image source={require('../../../assets/goose-ipa-lg.png')}></Image>
