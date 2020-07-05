@@ -24,6 +24,7 @@ import { NavigationContainer, DrawerActions } from '@react-navigation/native';
 import Profile from '../pages/ClientNavigation/profile';
 
 
+
 function CustomDrawerContent(props) {
   return (
     <DrawerContentScrollView {...props}>
@@ -39,7 +40,6 @@ function CustomDrawerContent(props) {
     </DrawerContentScrollView>
   );
 }
-
 
 const Routes = (): JSX.Element => {
   const AppDrawerNavigator = createDrawerNavigator();
@@ -59,6 +59,17 @@ const Stack = (): JSX.Element => {
   const group: number = useSelector(
     (state: TGlobalState) => state.navigation.group,
   );
+
+  const AppDrawerNavigator = createDrawerNavigator();
+  const Drawer = () => {
+
+    return (
+        <AppDrawerNavigator.Navigator drawerContent={props => <CustomDrawerContent {...props} />}>
+          <AppDrawerNavigator.Screen name="Events" component={Events} />
+          <AppDrawerNavigator.Screen name="BeerCollection" component={BeerCollection} />
+        </AppDrawerNavigator.Navigator>
+    );
+  }
 
   return (
     <>
@@ -94,6 +105,7 @@ const Stack = (): JSX.Element => {
       <AppStack.Screen name="BottomNavigation" component={BottomNavigation} />
       <AppStack.Screen name="BeerCollection" component={BeerCollection} />
       <AppStack.Screen name="BeerDetails" component={BeerDetails} />
+      <AppStack.Screen name="Drawer" component={Drawer} />
     </AppStack.Navigator>
     </>
   );

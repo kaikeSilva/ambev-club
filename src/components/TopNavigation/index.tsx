@@ -14,7 +14,6 @@ const TopNavigation = (): JSX.Element | null => {
 
   const navigation = useNavigation();
 
-
   function handleOpenDrawer() {
     navigation.dispatch(DrawerActions.openDrawer());
   }
