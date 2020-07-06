@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Constants from 'expo-constants';
+import Api from '../../../services/Api';
 import { Feather as Icon, FontAwesome5 } from '@expo/vector-icons';
 import {
   View,
@@ -15,9 +16,28 @@ import { SvgUri } from 'react-native-svg';
 import BottomNavigation from '../../../components/BottomNavigation';
 import TopNavigation from '../../../components/TopNavigation';
 
+interface Bar   {
+  idBar: number
+  intCNPJ: number
+  strEmail: string
+  strEndereco: string
+  strLogo: string
+  strNome: string
+  strSenha: string
+}
+
+
 const Points = () => {
   const navigation = useNavigation();
-  const [showBar, setShowBar] = React.useState<boolean>(false);
+  const [bars, setBars] = useState<Bar[]>([])
+  const [showBar, setBar] = React.useState<boolean>(false);
+  
+  useEffect(() => {
+    Api.get('').then(response => {
+      setBar(response.data)
+    })
+  },[])
+
 
   function handleNavigationBack() {
     navigation.goBack();
@@ -44,23 +64,33 @@ const Points = () => {
         <View style={styles.mapContainer}>
           <MapView
             style={styles.map}
-            initialRegion={{
-              latitude: -16.6500617,
-              longitude: -49.4616647,
-              latitudeDelta: 0.014,
-              longitudeDelta: 0.014,
-            }}
           >
             <Marker
               style={styles.mapMarker}
-              onPress={() => setShowBar(true)}
+              coordinate={{
+                latitude:  -16.7174573,
+                longitude: -49.1448389,
+              }}
+            >
+              <FontAwesome5 name="map-marker-alt" size={32} color="#DE2B2B" />
+            </Marker>
+            <Marker
+              style={styles.mapMarker}
+              coordinate={{
+                latitude:  -16.7174573,
+                longitude: -49.1451822,
+              }}
+            >
+              <FontAwesome5 name="map-marker-alt" size={32} color="#DE2B2B" />
+            </Marker>
+            <Marker
+              style={styles.mapMarker}
               coordinate={{
                 latitude: -16.6500617,
                 longitude: -49.4616,
               }}
             >
-              <View>{showBar ? showBarDetails() : null}</View>
-              <FontAwesome5 name="map-marker-alt" size={24} color="black" />
+              <FontAwesome5 name="map-marker-alt" size={32} color="#DE2B2B" />
             </Marker>
           </MapView>
         </View>
